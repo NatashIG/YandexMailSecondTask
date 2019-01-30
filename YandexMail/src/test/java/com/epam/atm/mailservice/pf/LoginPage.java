@@ -1,5 +1,6 @@
 package com.epam.atm.mailservice.pf;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,9 +30,15 @@ public class LoginPage extends AbstractPage {
         passwordField.sendKeys(password);
         return this;
     }
-    public MailBox login() {
+    public MailBox login(String login, String password) {
+        fillLoginField(login);
+        loginButton.click();
+        fillPasswordField(password);
         loginButton.click();
         return new MailBox(driver);
+    }
+    public boolean isLoggedIn(){
+        return driver.findElement(By.className("mail-User-Name")).isDisplayed();
     }
 }
 

@@ -1,9 +1,5 @@
 package com.epam.atm.mailservice.pf;
 
-import com.epam.atm.mailservice.po.HomePage;
-import com.epam.atm.mailservice.po.LoginPage;
-import com.epam.atm.mailservice.po.MailBox;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -28,13 +24,12 @@ public class MailBoxTestPF {
     @BeforeMethod
     public void login() {
 
-        LoginPage loginPage = new HomePage(driver).open().enterMailBox();
-        loginPage.fillLoginField("stellapolare5922");
-        loginPage.login();
-        loginPage.fillPasswordField("wdlearning");
-        loginPage.login();
+        HomePage homePage = new HomePage(driver);
 
-        Assert.assertTrue(driver.findElement(By.className("mail-User-Name")).isDisplayed(), "Login is unsuccessful");
+        LoginPage loginPage = homePage.open().enterMailBox();
+        loginPage.login("stellapolare5922","wdlearning");
+
+        Assert.assertTrue(loginPage.isLoggedIn(), "Login is unsuccessful");
     }
 
     @Test
@@ -44,23 +39,24 @@ public class MailBoxTestPF {
         mailbox.writeNewEmail();
 
         EditEmailPage editEmailPage = new EditEmailPage(driver);
-        editEmailPage.fillAddresseeField("stella5922@gmail.com");
-        editEmailPage.fillSubjectField("Hello Stella!");
-        editEmailPage.fillEmailBody("Hello!");
+        editEmailPage.createEmail("stella5922@gmail.com","Hello Stella!","Hello!");
 
         mailbox.openDraftsFolder();
-        Assert.assertTrue(driver.findElement(By.xpath("//div[@class='mail-MessageSnippet-Content']")).isDisplayed(), "The draft has not been saved");
+        Assert.assertTrue(mailbox.draftIsPresent(), "The draft has not been saved");
         mailbox.openEmail();
 
-        Assert.assertTrue(driver.findElement(By.name("to")).getText().contains("stella5922"), "Wrong addressee");
+        Assert.assertTrue(mailbox.addresseeMatches(), "Wrong addressee");
+        Assert.assertTrue(mailbox.subjectMatches(), "Wrong subject");
+        //Assert.assertTrue(mailbox.bodyMatches(), "Wrong body");
+
         editEmailPage.sendEmail();
         mailbox.emailSentCheck();
 
         mailbox.openDraftsFolder();
-        Assert.assertTrue(driver.findElement(By.xpath("//div[contains(@class,'ns-view-messages-list')]")).getText().contains("В папке «Черновики» нет писем."), "The letter has not been sent");
+        Assert.assertTrue(mailbox.draftsFolderIsEmpty(), "The letter has not been sent");
 
         mailbox.openSentFolder();
-        Assert.assertTrue(driver.findElement(By.xpath("//div[@class='mail-MessageSnippet-Content']")).isDisplayed(), "The letter has not been sent");
+        Assert.assertTrue(mailbox.emailIsSent(), "The letter has not been sent");
     }
 
     @Test
@@ -70,7 +66,7 @@ public class MailBoxTestPF {
         mailbox.createFolder();
         mailbox.fillFolderName("TestFolder");
         mailbox.createFolderFinal();
-        Assert.assertTrue(driver.findElement(By.xpath("//div[contains(@class,'ns-view-folders')]")).getText().contains("TestFolder"), "Folder has not been created");
+        Assert.assertTrue(mailbox.newFolderisPresent(), "Folder has not been created");
     }
 
     @Test
@@ -79,7 +75,7 @@ public class MailBoxTestPF {
         MailBox mailbox = new MailBox(driver);
         mailbox.fillSearchField("struggle");
         mailbox.selectSearchResult();
-        Assert.assertTrue(driver.findElement(By.xpath("//div[@class='mail-Message-Content']")).getText().contains("struggle"),"Wrong search results");
+        Assert.assertTrue(mailbox.emailIsFound(),"Wrong search results");
     }
 
     @AfterMethod

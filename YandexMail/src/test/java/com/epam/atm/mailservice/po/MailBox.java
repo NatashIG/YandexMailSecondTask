@@ -31,17 +31,35 @@ public class MailBox extends AbstractPage {
         driver.findElement(DRAFTS_FOLDER_LOCATOR).click();
         return this;
     }
+    public boolean draftIsPresent(){
+        return driver.findElement(By.xpath("//div[@class='mail-MessageSnippet-Content']")).isDisplayed();
+    }
     public EditEmailPage openEmail() {
         driver.findElement(EMAIL_LOCATOR).click();
         return new EditEmailPage(driver);
+    }
+    public boolean addresseeMatches(){
+        return driver.findElement(By.name("to")).getText().contains("stella5922");
+    }
+    public boolean subjectMatches(){
+        return driver.findElement(By.xpath("//input[contains(@class,'mail-Compose-Field-Input-Controller')]")).getAttribute("value").contains("Hello Stella!");
+    }
+    public boolean bodyMatches(){
+        return driver.findElement(By.xpath("//div[@id='cke_50_contents']/textarea")).getText().contains("Hello!");
     }
     public MailBox emailSentCheck(){
         driver.findElement(EMAIL_SENT_CONFIRMATION_LOCATOR).isDisplayed();
         return this;
     }
+    public boolean draftsFolderIsEmpty(){
+        return driver.findElement(By.xpath("//div[contains(@class,'ns-view-messages-list')]")).getText().contains("В папке «Черновики» нет писем.");
+    }
     public MailBox openSentFolder(){
         driver.findElement(SENT_FOLDER_LOCATOR).click();
         return this;
+    }
+    public boolean emailIsSent(){
+        return driver.findElement(By.xpath("//div[@class='mail-MessageSnippet-Content']")).isDisplayed();
     }
     public MailBox createFolder(){
         driver.findElement(CREATE_FOLDER_BUTTON_LOCATOR).click();
@@ -56,6 +74,9 @@ public class MailBox extends AbstractPage {
         waitForElementVisible(NEW_FOLDER_LOCATOR);
         return this;
     }
+    public boolean newFolderisPresent(){
+        return driver.findElement(By.xpath("//div[contains(@class,'ns-view-folders')]")).getText().contains("TestFolder");
+    }
     public MailBox fillSearchField(String keyword){
         driver.findElement(SEARCH_FIELD_LOCATOR).sendKeys(keyword);
         return this;
@@ -63,6 +84,9 @@ public class MailBox extends AbstractPage {
     public EmailPage selectSearchResult(){
         driver.findElement(SEARCH_RESULTS_LOCATOR).click();
         return new EmailPage(driver);
+    }
+    public boolean emailIsFound(){
+        return driver.findElement(By.xpath("//div[@class='mail-Message-Content']")).getText().contains("struggle");
     }
     public MailBox selectUserAvatar(){
         driver.findElement(USER_AVATAR_LOCATOR).click();

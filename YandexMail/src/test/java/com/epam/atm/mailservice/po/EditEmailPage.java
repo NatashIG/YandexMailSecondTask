@@ -26,6 +26,12 @@ public class EditEmailPage extends MailBox {
         waitForElementVisible(SAVED_DRAFT_LOCATOR);
         return this;
     }
+    public EditEmailPage createEmail(String addressee, String subject, String body){
+        fillAddresseeField(addressee);
+        fillSubjectField(subject);
+        fillEmailBody(body);
+        return this;
+    }
     public MailBox sendEmail() {
         driver.findElement(SEND_BUTTON_LOCATOR).click();
         return new MailBox(driver);

@@ -1,5 +1,6 @@
 package com.epam.atm.mailservice.pf;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -66,17 +67,35 @@ public class MailBox extends AbstractPage {
         draftsFolder.click();
         return this;
     }
+    public boolean draftIsPresent(){
+        return driver.findElement(By.xpath("//div[@class='mail-MessageSnippet-Content']")).isDisplayed();
+    }
     public EditEmailPage openEmail() {
         email.click();
         return new EditEmailPage(driver);
+    }
+    public boolean addresseeMatches(){
+        return driver.findElement(By.name("to")).getText().contains("stella5922");
+    }
+    public boolean subjectMatches(){
+        return driver.findElement(By.xpath("//input[contains(@class,'mail-Compose-Field-Input-Controller')]")).getAttribute("value").contains("Hello Stella!");
+    }
+    public boolean bodyMatches(){
+        return driver.findElement(By.xpath("//div[@id='cke_50_contents']/textarea")).getText().contains("Hello!");
     }
     public MailBox emailSentCheck(){
         emailSentConfirmation.isDisplayed();
         return this;
     }
+    public boolean draftsFolderIsEmpty(){
+        return driver.findElement(By.xpath("//div[contains(@class,'ns-view-messages-list')]")).getText().contains("В папке «Черновики» нет писем.");
+    }
     public MailBox openSentFolder(){
         sentFolder.click();
         return this;
+    }
+    public boolean emailIsSent(){
+        return driver.findElement(By.xpath("//div[@class='mail-MessageSnippet-Content']")).isDisplayed();
     }
     public MailBox createFolder(){
         createFolderButtom.click();
@@ -88,8 +107,11 @@ public class MailBox extends AbstractPage {
     }
     public MailBox createFolderFinal(){
         popUpCreateFolderButton.click();
-       // waitForElementVisible(NEW_FOLDER_LOCATOR);    разобраться с вэйтами
+        waitForElementVisible(newFolder);
         return this;
+    }
+    public boolean newFolderisPresent(){
+       return driver.findElement(By.xpath("//div[contains(@class,'ns-view-folders')]")).getText().contains("TestFolder");
     }
     public MailBox fillSearchField(String keyword){
         searchField.sendKeys(keyword);
@@ -98,6 +120,9 @@ public class MailBox extends AbstractPage {
     public EmailPage selectSearchResult(){
         searchResults.click();
         return new EmailPage(driver);
+    }
+    public boolean emailIsFound(){
+        return driver.findElement(By.xpath("//div[@class='mail-Message-Content']")).getText().contains("struggle");
     }
     public MailBox selectUserAvatar(){
         userAvatar.click();

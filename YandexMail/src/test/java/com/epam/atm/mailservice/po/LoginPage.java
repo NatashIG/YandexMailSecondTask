@@ -12,22 +12,31 @@ public class LoginPage extends AbstractPage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-    public LoginPage fillLoginField(String login){
-       if (driver.findElement(LOGIN_FIELD_LOCATOR).isDisplayed()){
-           driver.findElement(LOGIN_FIELD_LOCATOR).sendKeys(login);
-       }
+
+    public LoginPage fillLoginField(String login) {
+        if (driver.findElement(LOGIN_FIELD_LOCATOR).isDisplayed()) {
+            driver.findElement(LOGIN_FIELD_LOCATOR).sendKeys(login);
+        }
         return this;
     }
-    public LoginPage fillPasswordField(String password){
+
+    public LoginPage fillPasswordField(String password) {
         driver.findElement(PASSWORD_FIELD_LOCATOR).sendKeys(password);
         return this;
     }
-    public MailBox login() {
+
+    public MailBox login(String login, String password) {
+        fillLoginField(login);
+        driver.findElement(LOGIN_BUTTON_LOCATOR).click();
+        fillPasswordField(password);
         driver.findElement(LOGIN_BUTTON_LOCATOR).click();
         return new MailBox(driver);
     }
-}
 
+    public boolean isLoggedIn() {
+        return driver.findElement(By.className("mail-User-Name")).isDisplayed();
+    }
+}
 
 
 

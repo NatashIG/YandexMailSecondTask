@@ -39,7 +39,13 @@ public class EditEmailPage extends MailBox {
     }
     public EditEmailPage fillEmailBody(String body){
         emailBody.sendKeys(body);
-       // waitForElementVisible(savedDraft); нужно правильно описать в AbstractPage классе
+        waitForElementVisible(savedDraft);
+        return this;
+    }
+    public EditEmailPage createEmail(String addressee, String subject, String body){
+        fillAddresseeField(addressee);
+        fillSubjectField(subject);
+        fillEmailBody(body);
         return this;
     }
     public MailBox sendEmail() {
