@@ -1,6 +1,6 @@
 package com.epam.atm.pages.googledisk;
 
-import org.openqa.selenium.WebDriver;
+import com.epam.atm.utils.Browser;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -13,8 +13,8 @@ public class TrashBinPage extends AbstractPage {
     private WebElement deletedFile;
 
 
-    public TrashBinPage(WebDriver driver) {
-        super(driver);
+    public TrashBinPage(Browser browser) {
+        super(browser);
     }
     public boolean isOpened() {
         waitForElementVisible(trashBinOpened);

@@ -1,7 +1,7 @@
 package com.epam.atm.pages.googledisk;
 
 import com.epam.atm.bo.googledisk.User;
-import org.openqa.selenium.WebDriver;
+import com.epam.atm.utils.Browser;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -21,8 +21,8 @@ public class LoginPage extends AbstractPage {
     private WebElement passwordNextButton;
 
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
+    public LoginPage(Browser browser) {
+        super(browser);
     }
     public LoginPage fillLoginField(String login) {
         if (loginField.isDisplayed()) {
@@ -39,6 +39,6 @@ public class LoginPage extends AbstractPage {
         fillLoginField(user.getLogin());
         fillPasswordField(user.getPassword());
         passwordNextButton.click();
-        return new GDMainPage(driver);
+        return new GDMainPage(browser);
     }
 }

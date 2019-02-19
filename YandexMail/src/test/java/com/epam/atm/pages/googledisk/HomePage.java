@@ -1,7 +1,6 @@
 package com.epam.atm.pages.googledisk;
 
-import com.epam.atm.utils.JSexecutor;
-import org.openqa.selenium.WebDriver;
+import com.epam.atm.utils.Browser;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -13,15 +12,15 @@ public class HomePage extends AbstractPage {
     private WebElement enterGoogleDisk;
 
 
-    public HomePage(WebDriver driver) {
-        super(driver);
+    public HomePage(Browser browser) {
+        super(browser);
     }
     public HomePage open(){
-        driver.get(URL);
+        browser.get(URL);
         return this;
     }
     public LoginPage enterGoogleDisk(){
-        JSexecutor.jsclick(driver,enterGoogleDisk);
-        return new LoginPage(driver);
+        browser.jsclick(enterGoogleDisk);
+        return new LoginPage(browser);
     }
 }

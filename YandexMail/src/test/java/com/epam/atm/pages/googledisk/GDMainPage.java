@@ -1,8 +1,7 @@
 package com.epam.atm.pages.googledisk;
 
+import com.epam.atm.utils.Browser;
 import com.epam.atm.utils.CustomActions;
-import com.epam.atm.utils.JSexecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -33,8 +32,8 @@ public class GDMainPage extends AbstractPage {
     private WebElement logOffButton;
 
 
-    public GDMainPage(WebDriver driver) {
-        super(driver);
+    public GDMainPage(Browser browser) {
+        super(browser);
     }
     public boolean isLoggedIn(){
         return userAvatar.isDisplayed();
@@ -42,18 +41,18 @@ public class GDMainPage extends AbstractPage {
     public GDMainPage deleteFile(){
         waitForElementVisible(file);
         waitForElementVisible(trashBin);
-        CustomActions.dragAndDrop(driver,file,trashBin);
+        CustomActions.dragAndDrop(browser,file,trashBin);
         return this;
     }
     public TrashBinPage openTrashBin(){
-        JSexecutor.highlightElement(driver,trashBin);
+        browser.highlightElement(trashBin);
         trashBin.click();
-        //JSexecutor.unHighlightElement(driver, trashBin);
-        return new TrashBinPage(driver);
+        //browser.unHighlightElement(trashBin);
+        return new TrashBinPage(browser);
     }
     public GDMainPage viewFile(){
         waitForElementVisible(file);
-        CustomActions.doubleClick(driver,file);
+        CustomActions.doubleClick(browser,file);
         return this;
     }
     public boolean imageIsOpened(){
@@ -65,7 +64,7 @@ public class GDMainPage extends AbstractPage {
     }
     public  GDMainPage deleteFileContextMenu(){
         waitForElementVisible(image7);
-        CustomActions.contextClick(driver,image7,contextMenuDelete);
+        CustomActions.contextClick(browser,image7,contextMenuDelete);
         return this;
     }
     public GDMainPage selectUserAvatar(){
@@ -74,6 +73,6 @@ public class GDMainPage extends AbstractPage {
     }
     public HomePage logoff(){
         logOffButton.click();
-        return new HomePage(driver);
+        return new HomePage(browser);
     }
 }

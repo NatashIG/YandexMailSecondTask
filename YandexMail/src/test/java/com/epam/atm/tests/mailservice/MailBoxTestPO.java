@@ -16,7 +16,7 @@ public class MailBoxTestPO extends BaseTest {
     @BeforeMethod
     public void login() {
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(browser);
 
         LoginPage loginPage = homePage.open().enterMailBox();
         loginPage.login("stellapolare5922","wdlearning");
@@ -27,10 +27,10 @@ public class MailBoxTestPO extends BaseTest {
     @Test
     public void createNewEmail() {
 
-        MailBox mailbox = new MailBox(driver);
+        MailBox mailbox = new MailBox(browser);
         mailbox.writeNewEmail();
 
-        EditEmailPage editEmailPage = new EditEmailPage(driver);
+        EditEmailPage editEmailPage = new EditEmailPage(browser);
         editEmailPage.createEmail("stella5922@gmail.com","Hello Stella!","Hello!");
 
         mailbox.openDraftsFolder();
@@ -54,7 +54,7 @@ public class MailBoxTestPO extends BaseTest {
     @Test
     public void createNewFolder() {
 
-        MailBox mailbox = new MailBox(driver);
+        MailBox mailbox = new MailBox(browser);
         mailbox.createFolder();
         mailbox.fillFolderName("TestFolder");
         mailbox.createFolderFinal();
@@ -64,7 +64,7 @@ public class MailBoxTestPO extends BaseTest {
     @Test
     public void findEmail() {
 
-        MailBox mailbox = new MailBox(driver);
+        MailBox mailbox = new MailBox(browser);
         mailbox.fillSearchField("struggle");
         mailbox.selectSearchResult();
         Assert.assertTrue(mailbox.emailIsFound(),"Wrong search results");
@@ -73,7 +73,7 @@ public class MailBoxTestPO extends BaseTest {
     @AfterMethod
     public void logOff() {
 
-        MailBox mailbox = new MailBox(driver);
+        MailBox mailbox = new MailBox(browser);
         mailbox.selectUserAvatar();
         mailbox.logoff();
     }

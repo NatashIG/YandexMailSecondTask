@@ -16,19 +16,19 @@ public class GDTest extends BaseTest {
     @BeforeMethod
     public void login() {
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(browser);
 
         LoginPage loginPage = homePage.open().enterGoogleDisk();
         loginPage.login(new User("natalie.ignatovich@gmail.com", "wdlearning"));
 
-        GDMainPage gdMainPage = new GDMainPage(driver);
+        GDMainPage gdMainPage = new GDMainPage(browser);
         Assert.assertTrue(gdMainPage.isLoggedIn(), "Login is unsuccessful");
     }
 
     @Test
     public void doubleClick() {
 
-        GDMainPage gdMainPage = new GDMainPage(driver);
+        GDMainPage gdMainPage = new GDMainPage(browser);
         gdMainPage.viewFile();
         Assert.assertTrue(gdMainPage.imageIsOpened(), "Image is not opened");
         gdMainPage.backToMainPage();
@@ -38,10 +38,10 @@ public class GDTest extends BaseTest {
     @Test
     public void dragNDrop() {
 
-        GDMainPage gdMainPage = new GDMainPage(driver);
+        GDMainPage gdMainPage = new GDMainPage(browser);
         gdMainPage.deleteFile();
 
-        TrashBinPage trashBinPage = new TrashBinPage(driver);
+        TrashBinPage trashBinPage = new TrashBinPage(browser);
         gdMainPage.openTrashBin();
         Assert.assertTrue(trashBinPage.isOpened(), "TrashBin has not been opened");
         Assert.assertTrue(trashBinPage.fileIsPresent(), "TrashBin is empty");
@@ -50,10 +50,10 @@ public class GDTest extends BaseTest {
     @Test
     public void contextClick() {
 
-        GDMainPage gdMainPage = new GDMainPage(driver);
+        GDMainPage gdMainPage = new GDMainPage(browser);
         gdMainPage.deleteFileContextMenu();
 
-        TrashBinPage trashBinPage = new TrashBinPage(driver);
+        TrashBinPage trashBinPage = new TrashBinPage(browser);
         gdMainPage.openTrashBin();
         Assert.assertTrue(trashBinPage.isOpened(), "TrashBin has not been opened");
         Assert.assertTrue(trashBinPage.fileIsPresent(), "TrashBin is empty");
@@ -62,7 +62,7 @@ public class GDTest extends BaseTest {
     @AfterMethod
     public void logOff() {
 
-        GDMainPage gdMainPage = new GDMainPage(driver);
+        GDMainPage gdMainPage = new GDMainPage(browser);
         gdMainPage.selectUserAvatar();
         gdMainPage.logoff();
     }
