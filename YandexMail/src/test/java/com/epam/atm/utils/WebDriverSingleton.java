@@ -20,6 +20,13 @@ public class WebDriverSingleton {
         }
         return browser;
     }
+
+    public static void kill(){
+        if(browser != null){
+            browser.quit();
+            browser = null;
+        }
+    }
 }
 
 /*System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nataha\\Desktop\\AT_CDP\\WebDriver\\chromedriver.exe");

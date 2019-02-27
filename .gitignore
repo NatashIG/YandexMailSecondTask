@@ -2,4 +2,4 @@ desktop.ini
 target/
 bin/
 .idea/
-.iml
+*.iml

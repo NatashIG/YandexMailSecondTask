@@ -17,7 +17,7 @@ public class AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-    protected void waitForElementVisible(WebElement element) {
-        new WebDriverWait(driver, WAIT_FOR_ELEMENT_TIMEOUT_SECONDS).until(ExpectedConditions.visibilityOf(element));
+    protected WebElement waitForElementVisible(WebElement element) {
+       return new WebDriverWait(driver, WAIT_FOR_ELEMENT_TIMEOUT_SECONDS).until(ExpectedConditions.visibilityOf(element));
     }
 }

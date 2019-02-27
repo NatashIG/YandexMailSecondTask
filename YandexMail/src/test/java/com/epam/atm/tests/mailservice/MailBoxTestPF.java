@@ -62,7 +62,7 @@ public class MailBoxTestPF extends BaseTest {
     }
 
     @Test
-    public void findEmail() {
+    public void findEmail() throws InterruptedException {
 
         MailBox mailbox = new MailBox(browser);
         mailbox.fillSearchField("struggle");

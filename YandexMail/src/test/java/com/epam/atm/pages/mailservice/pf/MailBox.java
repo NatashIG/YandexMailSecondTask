@@ -113,7 +113,9 @@ public class MailBox extends AbstractPage {
     public boolean newFolderisPresent(){
        return driver.findElement(By.xpath("//div[contains(@class,'ns-view-folders')]")).getText().contains("TestFolder");
     }
-    public MailBox fillSearchField(String keyword){
+    public MailBox fillSearchField(String keyword) throws InterruptedException {
+        Thread.sleep(500);
+        waitForElementVisible(searchField).click();
         searchField.sendKeys(keyword);
         return this;
     }
