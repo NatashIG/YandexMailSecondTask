@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -59,5 +60,11 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.bouncycastle:bcprov-jdk15on:1.58" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.bouncycastle:bcpkix-jdk15on:1.58" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.lightbody.bmp:mitm:2.1.5" level="project" />
+    <orderEntry type="library" name="Maven: info.cukes:cucumber-java:1.2.5" level="project" />
+    <orderEntry type="library" name="Maven: info.cukes:cucumber-core:1.2.5" level="project" />
+    <orderEntry type="library" name="Maven: info.cukes:cucumber-html:0.2.3" level="project" />
+    <orderEntry type="library" name="Maven: info.cukes:cucumber-jvm-deps:1.0.5" level="project" />
+    <orderEntry type="library" name="Maven: info.cukes:gherkin:2.12.2" level="project" />
+    <orderEntry type="library" name="Maven: info.cukes:cucumber-testng:1.2.5" level="project" />
   </component>
 </module>
