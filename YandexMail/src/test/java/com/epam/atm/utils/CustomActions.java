@@ -17,5 +17,9 @@ public class CustomActions {
     public static void contextClick(WebDriver driver,WebElement element,WebElement menuItem) {
         new Actions(driver).contextClick(element).click(menuItem).build().perform();
     }
+
+    public static void scrollToElement(WebDriver driver,WebElement element){
+        new Actions(driver).moveToElement(element).build().perform();
+    }
 }
 

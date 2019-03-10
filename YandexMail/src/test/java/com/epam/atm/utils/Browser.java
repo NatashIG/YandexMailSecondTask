@@ -11,11 +11,11 @@ import java.util.Set;
 
 public class Browser implements WebDriver {
 
-        protected WebDriver driver;
+    protected WebDriver driver;
 
-        public Browser(WebDriver driver) {
-            this.driver = driver;
-        }
+    public Browser(WebDriver driver) {
+        this.driver = driver;
+    }
 
     public void get(String url) {
         driver.get(url);
@@ -34,8 +34,7 @@ public class Browser implements WebDriver {
     }
 
     public WebElement findElement(By by) {
-        Reporter.log(String.format("Finding element: %s, current URL: '%s'", by.toString(), driver.getCurrentUrl()),
-                true);
+        Reporter.log(String.format("Finding element: %s, current URL: '%s'", by.toString(), driver.getCurrentUrl()), true);
         return driver.findElement(by);
     }
 
@@ -82,9 +81,14 @@ public class Browser implements WebDriver {
         js.executeScript("arguments[0].style.backgroundColor = '" + bg + "'", element);
     }
 
-    public void jsclick (WebElement element) {
+    public void jsclick(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click()", element);
     }
 
+    public void scrollToElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true)", element);
+    }
 }
+

@@ -5,12 +5,14 @@ import com.epam.atm.utils.WebDriverSingleton;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import java.net.MalformedURLException;
+
 public class BaseTest {
 
     protected Browser browser;//WebDriver driver ;
 
     @BeforeClass
-    public void setUp() {
+    public void setUp() throws MalformedURLException {
        browser = WebDriverSingleton.getWebDriverInstance();
     }
 
