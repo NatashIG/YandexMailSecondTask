@@ -1,11 +1,11 @@
 package com.epam.atm.utils;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.testng.Reporter;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
@@ -89,6 +89,23 @@ public class Browser implements WebDriver {
     public void scrollToElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true)", element);
+    }
+
+    public void takeScreenshot() {
+        final String SCREENSHOTS_NAME_TPL = "screenshots/scr";
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            String screenshotName = SCREENSHOTS_NAME_TPL + System.nanoTime();
+            File copy = new File(screenshotName + ".png");
+            FileUtils.copyFile(screenshot, copy);
+            //MyLogger.info("Saved screenshot: " + screenshotName);
+        } catch (IOException e) {
+            //MyLogger.error("Failed to make screenshot");
+        }
+    }
+
+    public WebDriver getDriver(){
+        return driver;
     }
 }
 

@@ -1,0 +1,51 @@
+18:02:11:864 INFO  MyLogger.info - Folder created
+18:28:35:178 WARN  MyLogger.warn - Something went wrong
+18:28:38:052 INFO  MyLogger.log - Logged in
+18:28:54:820 INFO  MyLogger.log - Operation done
+18:28:55:560 WARN  MyLogger.warn - Something went wrong
+18:28:57:159 INFO  MyLogger.log - Logged in
+18:29:00:733 INFO  MyLogger.log - Folder is named
+18:29:01:200 INFO  MyLogger.info - Folder created
+18:29:02:710 INFO  MyLogger.log - Operation done
+18:29:03:351 WARN  MyLogger.warn - Something went wrong
+18:29:04:761 INFO  MyLogger.log - Logged in
+18:29:08:731 WARN  MyLogger.warn - Results are not found
+18:29:10:718 INFO  MyLogger.log - Operation done
+18:33:59:896 WARN  MyLogger.warn - Something went wrong
+18:34:02:828 INFO  MyLogger.log - Logged in
+18:34:19:039 ERROR MyLogger.error - Email is written
+18:34:20:760 INFO  MyLogger.log - Email sent
+18:34:24:473 INFO  MyLogger.log - Operation done
+18:34:25:505 WARN  MyLogger.warn - Something went wrong
+18:34:27:238 INFO  MyLogger.log - Logged in
+18:34:40:585 INFO  MyLogger.log - Folder is named
+18:34:41:302 INFO  MyLogger.info - Folder created
+18:34:43:903 INFO  MyLogger.log - Operation done
+18:34:44:583 WARN  MyLogger.warn - Something went wrong
+18:34:46:165 INFO  MyLogger.log - Logged in
+18:34:49:922 WARN  MyLogger.warn - Results are not found
+18:34:51:640 INFO  MyLogger.log - Operation done
+18:37:39:880 WARN  MyLogger.warn - Something went wrong
+18:37:42:433 INFO  MyLogger.log - Logged in
+18:37:57:660 ERROR MyLogger.error - Email is written
+18:37:59:575 INFO  MyLogger.log - Operation done
+18:41:58:361 WARN  MyLogger.warn - Something went wrong
+18:42:00:969 INFO  MyLogger.log - Logged in
+18:42:17:716 ERROR MyLogger.error - Email is written
+18:42:19:623 INFO  MyLogger.log - Operation done
+18:44:01:693 WARN  MyLogger.warn - Something went wrong
+18:44:05:513 INFO  MyLogger.log - Logged in
+18:44:22:622 ERROR MyLogger.error - Email is written
+18:44:24:178 INFO  MyLogger.log - Operation done
+18:48:43:210 WARN  MyLogger.warn - Something went wrong
+18:48:46:085 INFO  MyLogger.log - Logged in
+18:49:02:858 ERROR MyLogger.error - Email is written
+18:49:04:415 INFO  MyLogger.log - Email sent
+18:49:06:565 ERROR MyLogger.error - Failed to send email
+18:49:08:807 INFO  MyLogger.log - Operation done
+19:20:38:966 WARN  MyLogger.warn - Something went wrong
+19:20:42:432 INFO  MyLogger.log - Logged in
+19:20:46:775 INFO  MyLogger.log - Folder is named
+20:52:41:408 WARN  MyLogger.warn - Something went wrong
+20:52:45:383 INFO  MyLogger.log - Logged in
+20:52:50:555 INFO  MyLogger.log - Folder is named

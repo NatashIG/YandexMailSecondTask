@@ -1,5 +1,6 @@
 package com.epam.atm.pages.mailservice.pf;
 
+import com.epam.atm.reporting.MyLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,6 +36,7 @@ public class LoginPage extends AbstractPage {
         loginButton.click();
         fillPasswordField(password);
         loginButton.click();
+        MyLogger.log("Logged in");
         return new MailBox(driver);
     }
     public boolean isLoggedIn(){

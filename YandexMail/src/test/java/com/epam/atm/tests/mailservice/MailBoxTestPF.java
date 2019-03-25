@@ -36,7 +36,6 @@ public class MailBoxTestPF extends BaseTest {
         mailbox.openDraftsFolder();
         Assert.assertTrue(mailbox.draftIsPresent(), "The draft has not been saved");
         mailbox.openEmail();
-
         Assert.assertTrue(mailbox.addresseeMatches(), "Wrong addressee");
         Assert.assertTrue(mailbox.subjectMatches(), "Wrong subject");
         //Assert.assertTrue(mailbox.bodyMatches(), "Wrong body");
@@ -67,7 +66,7 @@ public class MailBoxTestPF extends BaseTest {
         MailBox mailbox = new MailBox(browser);
         mailbox.fillSearchField("struggle");
         mailbox.selectSearchResult();
-        Assert.assertTrue(mailbox.emailIsFound(),"Wrong search results");
+        Assert.assertTrue(mailbox.emailIsFound(), "Wrong search results");
     }
 
     @AfterMethod

@@ -1,5 +1,6 @@
 package com.epam.atm.pages.mailservice.pf;
 
+import com.epam.atm.reporting.MyLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,7 +29,7 @@ public class MailBox extends AbstractPage {
     @FindBy(xpath="//div[@class='mail-MessageSnippet-Content']")
     private WebElement email;
 
-    @FindBy(xpath="//span[contains(@class,'mail-NestedList-Setup-Add')]")
+    @FindBy(xpath="//div[contains(@class,'mail-NestedList-Setup mail-FolderList-Setup')]")//(xpath="//span[contains(@class,'mail-NestedList-Setup-Add')]")
     private WebElement createFolderButtom;
 
     @FindBy(xpath="//input[@name='folder_name']")
@@ -52,7 +53,7 @@ public class MailBox extends AbstractPage {
     @FindBy(xpath="//span[contains(@class,'mail-User-Avatar')]")
     private WebElement userAvatar;
 
-    @FindBy(xpath="//a[@data-metric='Выйти из сервисов Яндекса']")
+    @FindBy(xpath="//a[@data-metric='Sign out of Yandex services']")
     private WebElement logOffButton;
 
     public MailBox(WebDriver driver) {
@@ -92,6 +93,7 @@ public class MailBox extends AbstractPage {
     }
     public MailBox openSentFolder(){
         sentFolder.click();
+        MyLogger.error("Failed to send email");
         return this;
     }
     public boolean emailIsSent(){
@@ -103,11 +105,14 @@ public class MailBox extends AbstractPage {
     }
     public MailBox fillFolderName(String folderName){
         folderNameField.sendKeys(folderName);
+        MyLogger.log("Folder is named");
         return this;
     }
     public MailBox createFolderFinal(){
         popUpCreateFolderButton.click();
         waitForElementVisible(newFolder);
+        MyLogger.info("Folder created");
+        //MyListener.takeScreenshot();
         return this;
     }
     public boolean newFolderisPresent(){
@@ -121,6 +126,8 @@ public class MailBox extends AbstractPage {
     }
     public EmailPage selectSearchResult(){
         searchResults.click();
+        email.click();
+        MyLogger.warn("Results are not found");
         return new EmailPage(driver);
     }
     public boolean emailIsFound(){
@@ -132,6 +139,7 @@ public class MailBox extends AbstractPage {
     }
     public HomePage logoff(){
         logOffButton.click();
+        MyLogger.log("Operation done");
         return new HomePage(driver);
     }
 }

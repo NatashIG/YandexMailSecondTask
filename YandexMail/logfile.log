@@ -1,0 +1,80 @@
+11:30:28:312 WARN  MyLogger.warn - Something went wrong
+11:30:49:227 WARN  MyLogger.warn - Something went wrong
+11:31:10:302 WARN  MyLogger.warn - Something went wrong
+11:31:15:518 INFO  MyLogger.log - Logged in
+11:37:45:928 WARN  MyLogger.warn - Something went wrong
+11:38:06:821 WARN  MyLogger.warn - Something went wrong
+11:38:19:900 WARN  MyLogger.warn - Something went wrong
+11:38:24:641 INFO  MyLogger.log - Logged in
+11:39:57:369 WARN  MyLogger.warn - Something went wrong
+11:40:01:032 INFO  MyLogger.log - Logged in
+11:40:17:207 ERROR MyLogger.error - Email is written
+11:40:19:434 INFO  MyLogger.log - Email sent
+11:40:22:209 ERROR MyLogger.error - Failed to send email
+11:40:25:136 INFO  MyLogger.log - Operation done
+11:40:45:377 WARN  MyLogger.warn - Something went wrong
+11:41:03:190 INFO  MyLogger.log - Logged in
+11:41:33:024 INFO  MyLogger.log - Folder is named
+11:41:39:039 INFO  MyLogger.info - Folder created
+11:42:12:212 INFO  MyLogger.log - Operation done
+11:42:33:342 WARN  MyLogger.warn - Something went wrong
+11:42:50:377 INFO  MyLogger.log - Logged in
+11:45:30:969 WARN  MyLogger.warn - Something went wrong
+11:45:34:148 INFO  MyLogger.log - Logged in
+11:46:09:194 INFO  MyLogger.info - Failed
+11:46:14:166 INFO  MyLogger.info - Saved screenshot: target\screenshots\screenshot997604360541918
+11:46:40:435 INFO  MyLogger.log - Operation done
+11:47:01:549 WARN  MyLogger.warn - Something went wrong
+11:47:03:967 INFO  MyLogger.log - Logged in
+11:47:28:610 INFO  MyLogger.log - Folder is named
+11:47:28:773 INFO  MyLogger.info - Folder created
+11:49:53:893 WARN  MyLogger.warn - Something went wrong
+11:49:57:706 INFO  MyLogger.log - Logged in
+11:50:12:774 ERROR MyLogger.error - Email is written
+11:50:14:511 ERROR MyLogger.error - Failed
+11:50:15:072 INFO  MyLogger.info - Saved screenshot: target\screenshots\screenshot997845277083763
+11:50:21:323 INFO  MyLogger.log - Operation done
+11:50:37:586 WARN  MyLogger.warn - Something went wrong
+11:50:40:786 INFO  MyLogger.log - Logged in
+11:50:44:319 INFO  MyLogger.log - Folder is named
+11:50:44:489 INFO  MyLogger.info - Folder created
+11:50:44:703 ERROR MyLogger.error - Make screenshot on Configuration Failure
+11:50:45:112 INFO  MyLogger.info - Saved screenshot: target\screenshots\screenshot997875328130020
+11:52:38:982 WARN  MyLogger.warn - Something went wrong
+11:52:42:526 INFO  MyLogger.log - Logged in
+11:52:59:243 ERROR MyLogger.error - Email is written
+11:53:01:264 INFO  MyLogger.log - Email sent
+11:53:03:154 ERROR MyLogger.error - Failed
+11:53:03:649 INFO  MyLogger.info - Saved screenshot: target\screenshots\screenshot998013846701134
+11:53:07:684 INFO  MyLogger.log - Operation done
+11:53:25:889 WARN  MyLogger.warn - Something went wrong
+11:53:27:602 INFO  MyLogger.log - Logged in
+11:53:30:826 INFO  MyLogger.log - Folder is named
+11:53:30:968 INFO  MyLogger.info - Folder created
+11:53:31:175 ERROR MyLogger.error - Make screenshot on Configuration Failure
+11:53:31:594 INFO  MyLogger.info - Saved screenshot: target\screenshots\screenshot998041809709938
+12:03:43:259 WARN  MyLogger.warn - Something went wrong
+12:03:46:604 INFO  MyLogger.log - Logged in
+12:04:03:097 ERROR MyLogger.error - Email is written
+12:04:05:756 INFO  MyLogger.log - Email sent
+12:04:08:245 ERROR MyLogger.error - Failed
+12:04:09:167 INFO  MyLogger.info - Saved screenshot: target\screenshots\screenshot998678927890408
+12:04:10:905 INFO  MyLogger.log - Operation done
+12:04:31:360 WARN  MyLogger.warn - Something went wrong
+12:04:33:209 INFO  MyLogger.log - Logged in
+12:04:57:614 INFO  MyLogger.log - Folder is named
+12:04:57:832 INFO  MyLogger.info - Folder created
+12:04:58:082 ERROR MyLogger.error - Make screenshot on Configuration Failure
+12:04:59:278 INFO  MyLogger.info - Saved screenshot: target\screenshots\screenshot998728898083438
+12:11:08:794 WARN  MyLogger.warn - Something went wrong
+12:11:11:883 INFO  MyLogger.log - Logged in
+12:11:27:402 ERROR MyLogger.error - Email is written
+12:11:29:570 INFO  MyLogger.log - Email sent
+12:11:31:618 ERROR MyLogger.error - Failed
+12:11:32:063 INFO  MyLogger.info - Saved screenshot: target\screenshots\screenshot999122257826774
+12:11:35:873 INFO  MyLogger.log - Operation done
+12:11:54:308 WARN  MyLogger.warn - Something went wrong
+12:11:56:028 INFO  MyLogger.log - Logged in
+12:12:19:561 INFO  MyLogger.log - Folder is named
+12:12:19:699 INFO  MyLogger.info - Folder created
+12:12:19:943 ERROR MyLogger.error - Make screenshot on Configuration Failure

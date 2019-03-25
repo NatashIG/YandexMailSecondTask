@@ -13,7 +13,7 @@ public class WebDriverSingleton {
         WebDriverCreator creator;
 
         if (browserName == null)
-            browserName = "c"; //this is to run test on Android, use "chrome" to run it on chrome, etc.
+            browserName = "chrome"; //this is to run test on Android, use "chrome" to run it on chrome, etc.
 
         if (browserName.equals("chrome"))
             creator = new ChromeDriverCreator();

@@ -1,5 +1,6 @@
 package com.epam.atm.pages.mailservice.pf;
 
+import com.epam.atm.reporting.MyLogger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -46,10 +47,12 @@ public class EditEmailPage extends MailBox {
         fillAddresseeField(addressee);
         fillSubjectField(subject);
         fillEmailBody(body);
+        MyLogger.error("Email is written");
         return this;
     }
     public MailBox sendEmail() {
         sendButton.click();
+        MyLogger.log("Email sent");
         return new MailBox(driver);
     }
 }
